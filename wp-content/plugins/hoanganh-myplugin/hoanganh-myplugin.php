@@ -11,6 +11,7 @@ Author URI: http://24h.com.vn
 
 define('HOANGANH_MP_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('HOANGANH_MP_CSS_URL', HOANGANH_MP_PLUGIN_URL . 'css/');
+define('HOANGANH_MP_JS_URL', HOANGANH_MP_PLUGIN_URL . 'js/');
 define('HOANGANH_MP_PLUGIN_PATH', plugin_dir_path(__FILE__));
 define('HOANGANH_MP_INCLUDE_PATH', HOANGANH_MP_PLUGIN_PATH . '/includes/');
 define('HOANGANH_MP_WIDGET_PATH', HOANGANH_MP_PLUGIN_PATH . '/widgets/');
@@ -21,12 +22,21 @@ if (!is_admin()) {
 } else {
     require_once HOANGANH_MP_INCLUDE_PATH . 'html.php';
     require_once HOANGANH_MP_PLUGIN_PATH . 'admin.php';
+    require_once HOANGANH_MP_WIDGET_PATH . 'class-simple-db.php';
     new HoanganhMpAdmin();
+    new Simple_Db();
 }
 
-require_once HOANGANH_MP_WIDGET_PATH . 'simple.php';
+//require_once HOANGANH_MP_WIDGET_PATH . 'simple.php';
+//
+//add_action('widgets_init', 'hoanganh_mp_widget_simple');
+//function hoanganh_mp_widget_simple() {
+//    register_widget('Hoanganh_Mp_Widget_simple');
+//}
 
-add_action('widgets_init', 'hoanganh_mp_widget_simple');
-function hoanganh_mp_widget_simple() {
-    register_widget('Hoanganh_Mp_Widget_simple');
-}
+//add_action('widgets_init', 'hoanganh_mp_widget_simple_remove');
+//function hoanganh_mp_widget_simple_remove() {
+//    unregister_widget('Hoanganh_Mp_Widget_simple');
+//}
+
+

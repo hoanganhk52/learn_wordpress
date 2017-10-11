@@ -28,8 +28,9 @@ class HoanganhMpAdmin {
         // Main Section
         $mainSection = 'hoanganh_mp_main_section';
         add_settings_section($mainSection, 'Main Setting', array($this, 'main_section_view'), $this->_menuSlug);
-//        add_settings_field('hoanganh_mp_new_title', 'Site title', array($this, 'creat_form_element'), $this->_menuSlug, $mainSection, array('name' => 'new_title_input'));
-//        add_settings_field('hoanganh_mp_logo', 'Logo', array($this, 'creat_form_element'), $this->_menuSlug, $mainSection, array('name' => 'logo_input'));
+        add_settings_field('hoanganh_mp_new_title', 'Site title', array($this, 'creat_form_element'), $this->_menuSlug, $mainSection, array('name' => 'new_title_input'));
+        add_settings_field('hoanganh_mp_logo', 'Logo', array($this, 'creat_form_element'), $this->_menuSlug, $mainSection, array('name' => 'logo_input'));
+        $tmp = get_settings_errors($this->_menuSlug);
     }
 
     public function validate_setting($data) {

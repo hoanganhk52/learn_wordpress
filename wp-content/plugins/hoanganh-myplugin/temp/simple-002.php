@@ -9,11 +9,7 @@ class Hoanganh_Mp_Widget_simple extends WP_Widget {
 
         parent::__construct($id_base, $name, $widget_options, $control_options);
 
-        add_action('wp_enqueue_scripts', array($this, 'add_file_js'));
-        global $wp_scripts;
-        echo '<pre>';
-        var_dump($wp_scripts);
-        echo '</pre>';
+        add_action('wp_enqueue_scripts', array($this, 'add_file_css_2'));
     }
 
     public function widget($args, $instance) {
@@ -69,8 +65,8 @@ class Hoanganh_Mp_Widget_simple extends WP_Widget {
         return $instance;
     }
 
-    public function add_file_js() {
-        wp_register_script('wg-simple', HOANGANH_MP_JS_URL . 'wp-simple.js', array(), '1.0', true);
-        wp_enqueue_script('wg-simple');
+    public function add_file_css_2() {
+        wp_register_style('wg-simple-03', HOANGANH_MP_CSS_URL . 'wp-simple-03.css', array(), '1.0', 'all');
+        wp_enqueue_style('wg-simple-03');
     }
 }
