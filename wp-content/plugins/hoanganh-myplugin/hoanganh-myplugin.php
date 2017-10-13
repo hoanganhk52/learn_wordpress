@@ -18,7 +18,8 @@ define('HOANGANH_MP_WIDGET_PATH', HOANGANH_MP_PLUGIN_PATH . '/widgets/');
 
 if (!is_admin()) {
     require_once HOANGANH_MP_PLUGIN_PATH . 'public.php';
-    HoanganhMp::init();
+    $hoanganh_mp = new HoanganhMp();
+    $hoanganh_mp->init();
 } else {
     require_once HOANGANH_MP_INCLUDE_PATH . 'html.php';
     require_once HOANGANH_MP_PLUGIN_PATH . 'admin.php';

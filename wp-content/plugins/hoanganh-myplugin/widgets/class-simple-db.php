@@ -10,17 +10,24 @@ class Simple_Db {
     }
 
     function hoanganh_mp_wg_db_simple_display() {
-        $wp_query = new WP_Query('author=213');
-        $link_post = '#';
-        if ($wp_query->have_posts()) {
-            while ($wp_query->have_posts()) {
-                $wp_query->the_post();
-                $link_post = admin_url('post.php?post=' . get_the_ID() . '&action=edit');
-                echo '<li><a href="' . $link_post . '">' . get_the_title() . '</a></li>';
-            }
-        } else {
-            echo '<p>' . translate('No post found') . '</p>';
-        }
-        wp_reset_postdata();
+        $arrquery = array('author' => 1);
+
+        $wp_query = new WP_Query(array( 'tag' => 'funny+football' ));
+
+        echo '<pre>';
+        print_r($wp_query);
+        echo '</pre>';
+
+        //        $link_post = '#';
+        //        if ($wp_query->have_posts()) {
+        //            while ($wp_query->have_posts()) {
+        //                $wp_query->the_post();
+        //                $link_post = admin_url('post.php?post=' . get_the_ID() . '&action=edit');
+        //                echo '<li><a href="' . $link_post . '">' . get_the_title() . '</a></li>';
+        //            }
+        //        } else {
+        //            echo '<p>' . translate('No post found') . '</p>';
+        //        }
+        //        wp_reset_postdata();
     }
 }

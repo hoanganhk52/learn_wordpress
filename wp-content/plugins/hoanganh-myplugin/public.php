@@ -4,27 +4,27 @@ require_once HOANGANH_MP_PLUGIN_PATH . 'includes/support.php';
 
 class HoanganhMp {
 
-    public static function init() {
+    public function init() {
         //1. thay doi toan bo title
-//        add_filter('the_title', array(__CLASS__, 'theTitle'));
+//        add_filter('the_title', array($this, 'theTitle'));
 
         //2. ham su dung 2 tham so cua hook the_title
-        //        add_filter('the_title', array(__CLASS__, 'theTitle2'), 10, 2);
+        //        add_filter('the_title', array($this, 'theTitle2'), 10, 2);
 
         //3. ham su dung 2 tham so cua hook the_title
-        //        add_filter('the_title', array(__CLASS__, 'theTitle3'), 10, 2);
+        //        add_filter('the_title', array($this, 'theTitle3'), 10, 2);
 
-        add_action('wp_footer', array(__CLASS__, 'showFunction'));
+        add_action('wp_footer', array($this, 'showFunction'));
 
-//        add_filter('the_content', array(__CLASS__, 'theContent'), 10, 1);
+//        add_filter('the_content', array($this, 'theContent'), 10, 1);
 
 //        remove_filter('the_content', 'convert_smilies', 20);
 
 //        remove_all_filters('the_content');
 //        echo '<br/>' . has_filter('the_content', 'convert_smilies');
 
-        add_filter('the_content', array(__CLASS__,'changeString'));
-        add_filter('the_title', array(__CLASS__,'changeString'));
+        add_filter('the_content', array($this,'changeString'));
+        add_filter('the_title', array($this,'changeString'));
     }
 
     public function theTitle() {
