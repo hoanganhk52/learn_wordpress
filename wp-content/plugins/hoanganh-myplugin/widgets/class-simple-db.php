@@ -6,7 +6,7 @@ class Simple_Db {
     }
 
     function hoanganh_mp_wg_db() {
-        wp_add_dashboard_widget('hoanganh_mp_wg_db_simple', 'My plugin ifomation', array($this, 'hoanganh_mp_wg_db_simple_display'));
+        wp_add_dashboard_widget('hoanganh_mp_wg_db_simple', 'My plugin information', array($this, 'ordering'));
     }
 
     function hoanganh_mp_wg_db_simple_display() {
@@ -29,5 +29,21 @@ class Simple_Db {
         //            echo '<p>' . translate('No post found') . '</p>';
         //        }
         //        wp_reset_postdata();
+    }
+
+    public function ordering() {
+        $wpQuery = new WP_Query(  array ( 'orderby' => 'post_title', 'posts_per_page' => '5' ));
+
+        if($wpQuery->have_posts()){
+            echo '<ul>';
+            while ($wpQuery->have_posts()){
+                $wpQuery->the_post();
+                echo '<li>' . get_the_ID() . ' - ' . get_the_title() . '</li>';
+
+            }
+            echo '</ul>';
+        }else{
+            echo '<p>' . translate('No post found') . '</p>';
+        }
     }
 }

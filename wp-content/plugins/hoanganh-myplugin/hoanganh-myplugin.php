@@ -15,6 +15,8 @@ define('HOANGANH_MP_JS_URL', HOANGANH_MP_PLUGIN_URL . 'js/');
 define('HOANGANH_MP_PLUGIN_PATH', plugin_dir_path(__FILE__));
 define('HOANGANH_MP_INCLUDE_PATH', HOANGANH_MP_PLUGIN_PATH . '/includes/');
 define('HOANGANH_MP_WIDGET_PATH', HOANGANH_MP_PLUGIN_PATH . '/widgets/');
+define('HOANGANH_MP_SHORTCODE_PATH', HOANGANH_MP_PLUGIN_PATH . '/shortcode/');
+define('HOANGANH_MP_METABOX_PATH', HOANGANH_MP_PLUGIN_PATH . '/metabox/');
 
 if (!is_admin()) {
     require_once HOANGANH_MP_PLUGIN_PATH . 'public.php';
@@ -23,9 +25,12 @@ if (!is_admin()) {
 } else {
     require_once HOANGANH_MP_INCLUDE_PATH . 'html.php';
     require_once HOANGANH_MP_PLUGIN_PATH . 'admin.php';
-    require_once HOANGANH_MP_WIDGET_PATH . 'class-simple-db.php';
+//    require_once HOANGANH_MP_WIDGET_PATH . 'class-simple-db.php';
     new HoanganhMpAdmin();
-    new Simple_Db();
+//    new Simple_Db();
+
+    require_once HOANGANH_MP_METABOX_PATH . 'main.php';
+    new Hoanganh_Mp_Metabox_Main();
 }
 
 //require_once HOANGANH_MP_WIDGET_PATH . 'simple.php';
@@ -39,5 +44,18 @@ if (!is_admin()) {
 //function hoanganh_mp_widget_simple_remove() {
 //    unregister_widget('Hoanganh_Mp_Widget_simple');
 //}
+
+//require_once HOANGANH_MP_WIDGET_PATH . 'class-last-post.php';
+//
+//function last_post_widget_init() {
+//    register_widget('Hoanganh_Mp_Widget_Last_Post');
+//}
+//
+//add_action('widgets_init', 'last_post_widget_init');
+//
+//
+//
+//require_once HOANGANH_MP_SHORTCODE_PATH . 'main.php';
+//new Hoanganh_Mp_Sc_Main();
 
 
