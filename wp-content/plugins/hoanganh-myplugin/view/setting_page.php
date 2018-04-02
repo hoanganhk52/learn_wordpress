@@ -1,28 +1,17 @@
 <div class="wrap">
-    <h2>My Page Setting</h2>
-    <?php settings_errors($this->_menuSlug, false, false) ?>
-    <p>Cau hinh plugin</p>
-    <form action="options.php" method="post" id="hoanganh-mp-form-setting" enctype="multipart/form-data">
-        <?php echo settings_fields('hoanganh_mp_options') ?>
-        <?php echo do_settings_sections($this->_menuSlug) ?>
-        <?php
 
-            global $wpdb;
+    <h2>My Setting</h2>
 
-            $table = $wpdb->prefix . 'hoanganh_mp_article';
-            $args = array(
-                'title'     => 'this is a test',
-                'picture'   => 'test3.png',
-                'content'   => 'chi la test ma thoi',
-                'status'    => 1
-            );
-//            $format = array('%s', '%s', '%s', '%d');
+    <?php settings_errors( $this->_menu_slug, false, false );?>
 
-            $result = $wpdb->prepare($table, $args);
+    <p>Đây là trang hiển thị các cấu hình của ZendVN MyPlugin</p>
+    <form method="post" action="options.php" id="<?php echo $this->_menu_slug;?>" enctype="multipart/form-data">
+        <?php echo settings_fields($this->_menu_slug);?>
+        <?php echo do_settings_sections($this->_menu_slug);?>
 
-            echo '<pre>';
-            print_r($result);
-            echo '</pre>';
-        ?>
+        <p class="submit">
+            <input id="btn-save-change" type="submit" name="submit" value="Save change"  class="button button-primary" >
+        </p>
     </form>
+
 </div>

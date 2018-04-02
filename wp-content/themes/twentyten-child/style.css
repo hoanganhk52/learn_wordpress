@@ -1,15 +1,14 @@
+@CHARSET "ISO-8859-1";
 /*
- Theme Name:   Twenty Ten Child
- Theme URI:    http://example.com/twenty-ten-child/
- Description:  Twenty Ten Child Theme
- Author:       Hoang Anh
- Author URI:   http://example.com
+ Theme Name:   My theme - Twenty Ten Child
+ Theme URI:    http://www.zend.vn/twenty-ten-child/
+ Description:  Mot theme ke thua tu Twentyten theme
+ Author:       KhanhPham
+ Author URI:   http://www.zend.vn
  Template:     twentyten
  Version:      1.0.0
- License:      GNU General Public License v2 or later
- License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
- Text Domain:  twenty-ten-child
+ Text Domain:  twenty-fourteen-child
 */
 
-@import "../twentyten/style.css";
+@import url('../twentyten/style.css');

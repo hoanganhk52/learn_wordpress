@@ -17,6 +17,9 @@ define('HOANGANH_MP_INCLUDE_PATH', HOANGANH_MP_PLUGIN_PATH . '/includes/');
 define('HOANGANH_MP_WIDGET_PATH', HOANGANH_MP_PLUGIN_PATH . '/widgets/');
 define('HOANGANH_MP_SHORTCODE_PATH', HOANGANH_MP_PLUGIN_PATH . '/shortcode/');
 define('HOANGANH_MP_METABOX_PATH', HOANGANH_MP_PLUGIN_PATH . '/metabox/');
+define('HOANGANH_MP_SETTING_PATH', HOANGANH_MP_PLUGIN_PATH . '/setting/');
+define('HOANGANH_MP_VIEW_PATH', HOANGANH_MP_PLUGIN_PATH . '/view/');
+define('HOANGANH_MP_CP_PATH', HOANGANH_MP_PLUGIN_PATH . '/post/');
 
 if (!is_admin()) {
     require_once HOANGANH_MP_PLUGIN_PATH . 'public.php';
@@ -32,6 +35,9 @@ if (!is_admin()) {
     require_once HOANGANH_MP_METABOX_PATH . 'main.php';
     new Hoanganh_Mp_Metabox_Main();
 }
+
+require_once HOANGANH_MP_CP_PATH . 'product.php';
+new Hoangnh_mp_cp_product();
 
 //require_once HOANGANH_MP_WIDGET_PATH . 'simple.php';
 //

@@ -14,7 +14,7 @@ class HoanganhMp {
         //3. ham su dung 2 tham so cua hook the_title
         //        add_filter('the_title', array($this, 'theTitle3'), 10, 2);
 
-        add_action('wp_footer', array($this, 'showFunction'));
+//        add_action('wp_footer', array($this, 'showFunction'));
 
 //        add_filter('the_content', array($this, 'theContent'), 10, 1);
 

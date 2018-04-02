@@ -1,0 +1,16 @@
+#hoanganh-mp-tabs{
+    list-style: none;
+}
+
+#hoanganh-mp-tabs li{
+    display: inline-block;
+    width: 70px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+#hoanganh-mp-tabs li a {
+    text-decoration: none;
+}
